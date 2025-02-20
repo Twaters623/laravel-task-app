@@ -18,5 +18,58 @@ Task::create([
 'priority' => 2, // (1 => low, 2 => medium, 3 => high)
 'category' => 'chores'
 ]);
+
+Task::create([
+'task_name' => 'Do homework',
+'task_location' => 'Study room',
+'time_complexity' => 2, // (1 => ~10 min, 2 => ~30 min, etc.)
+'materials_required'=> 'Books, notebook, pen',
+'deadline' => '2025-02-20 18:00:00',
+'priority' => 3, // (1 => low, 2 => medium, 3 => high)
+'category' => 'chores'
+]);
+
+Task::create([
+'task_name' => 'Clean room',
+'task_location' => 'Bedroom',
+'time_complexity' => 2, // (1 => ~10 min, 2 => ~30 min, etc.)
+'materials_required'=> 'Cleaning supplies, vacuum',
+'deadline' => '2025-02-20 11:00:00',
+'priority' => 2, // (1 => low, 2 => medium, 3 => high)
+'category' => 'chores'
+]);
+
+Task::create([
+'task_name' => 'Wash dishes',
+'task_location' => 'Kitchen',
+'time_complexity' => 1, // (1 => ~10 min, 2 => ~30 min, etc.)
+'materials_required'=> 'Dish soap, sponge',
+'deadline' => '2025-02-20 12:00:00',
+'priority' => 2, // (1 => low, 2 => medium, 3 => high)
+'category' => 'chores'
+]);
+
+Task::create([
+'task_name' => 'Fold laundry',
+'task_location' => 'Living room',
+'time_complexity' => 1, // (1 => ~10 min, 2 => ~30 min, etc.)
+'materials_required'=> 'Clothes',
+'deadline' => '2025-02-20 14:00:00',
+'priority' => 2, // (1 => low, 2 => medium, 3 => high)
+'category' => 'chores'
+]);
+
+Task::create([
+'task_name' => 'Vacuum the floor',
+'task_location' => 'Living room',
+'time_complexity' => 2, // (1 => ~10 min, 2 => ~30 min, etc.)
+'materials_required'=> 'Vacuum cleaner',
+'deadline' => '2025-02-20 16:00:00',
+'priority' => 3, // (1 => low, 2 => medium, 3 => high)
+'category' => 'chores'
+]);
+
+
+
 }
 }
