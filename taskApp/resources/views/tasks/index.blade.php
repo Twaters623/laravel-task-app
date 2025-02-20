@@ -29,13 +29,15 @@ Search & Sort
 </form>
 <ul>
 @forelse($tasks as $task)
-<li class="mb-2">
-{{ $task->task_name }}
-<!-- Link to the show page -->
-<a href="{{ route('tasks.show', $task->id) }}" class="text-blue-500 underline ml-2">
-View
-</a>
-</li>
+<div class="bg-blue-500 shadow-md">
+    <li class="mb-2 p-4 ">
+        {{ $task->task_name }}
+        <!-- Link to the show page -->
+        <a href="{{ route('tasks.show', $task->id) }}" class="text-black-500 underline ml-2">
+            View
+        </a>
+    </li>
+</div>
 @empty
 <li>No tasks yet.</li>
 @endforelse
