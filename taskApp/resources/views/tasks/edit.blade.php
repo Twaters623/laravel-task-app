@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <h1>Edit Task</h1>
-<form action="{{ route('tasks.update', $task->id) }}" method="POST">
+<form action="{{ route('tasks.update', $task->id) }}" method="POST" class="m-auto">
 @csrf
 @method('PUT') {{-- Important for updating (PUT/PATCH) --}}
-<div>
+<div class="">
 <label for="task_name">Task Name:</label>
 <input type="text" name="task_name" id="task_name"
 value="{{ old('task_name', $task->task_name) }}">

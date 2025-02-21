@@ -16,6 +16,23 @@
         @csrf
 
         {{-- Task Name --}}
+<<<<<<< HEAD
+        <div class="mb-4">
+            <label for="task_name" class="block text-sm font-medium text-gray-700">Task Name</label>
+            <input type="text" name="task_name" id="task_name" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm" placeholder="e.g., Take out trash" required>
+        </div>
+
+        {{-- Task Location --}}
+        <div class="mb-4">
+            <label for="task_location" class="block text-sm font-medium text-gray-700">Location</label>
+            <input type="text" name="task_location" id="task_location" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm" placeholder="Kitchen, Garage" optional>
+        </div>
+
+        {{-- Time Estimate (or Time Complexity) --}}
+        <div class="mb-4">
+            <label for="time_complexity" class="block text-sm font-medium text-gray-700">Time Estimate</label>
+            <select name="time_complexity" id="time_complexity" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm">
+=======
         <div class="mb-6">
             <label for="task_name" class="block text-sm font-medium text-purple-600">Task Name</label>
             <input type="text" name="task_name" id="task_name" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., Take out trash"
@@ -38,6 +55,7 @@ title="Location can contain letters, numbers, spaces, hyphens, underscores and c
         <div class="mb-6">
             <label for="time_complexity" class="block text-sm font-medium text-purple-600">Time Estimate</label>
             <select name="time_complexity" id="time_complexity" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+>>>>>>> upstream/main
                 <option value="10">10 min</option>
                 <option value="30">30 min</option>
                 <option value="60">1 hour</option>
@@ -46,6 +64,24 @@ title="Location can contain letters, numbers, spaces, hyphens, underscores and c
             </select>
         </div>
 
+<<<<<<< HEAD
+        {{-- Materials Required (Optional) --}}
+        <div class="mb-4">
+            <label for="materials_required" class="block text-sm font-medium text-gray-700">Materials Required</label>
+            <input type="text" name="materials_required" id="materials_required" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm" placeholder="e.g., Trash Bags, Broom" optional>
+        </div>
+
+        {{-- Deadline (Optional) --}}
+        <div class="mb-4">
+            <label for="deadline" class="block text-sm font-medium text-gray-700">Deadline</label>
+            <input type="datetime-local" name="deadline" id="deadline" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm">
+        </div>
+
+        {{-- Priority (Optional) --}}
+        <div class="mb-4">
+            <label for="priority" class="block text-sm font-medium text-gray-700">Priority</label>
+            <select name="priority" id="priority" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm">
+=======
         {{-- Materials Required --}}
         <div class="mb-6">
             <label for="materials_required" class="block text-sm font-medium text-purple-600">Materials Required</label>
@@ -62,6 +98,7 @@ title="Location can contain letters, numbers, spaces, hyphens, underscores and c
         <div class="mb-6">
             <label for="priority" class="block text-sm font-medium text-purple-600">Priority</label>
             <select name="priority" id="priority" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+>>>>>>> upstream/main
                 <option value="1">Low (1)</option>
                 <option value="2">Medium (2)</option>
                 <option value="3">High (3)</option>
@@ -78,9 +115,15 @@ title="Category must contain only letters and spaces">
         </div>
 
         {{-- Submit and Cancel Buttons --}}
+<<<<<<< HEAD
+        <div class="flex gap-4">
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-sm">Create Task</button>
+            <a href="{{ route('tasks.index') }}" class="px-4 py-2 bg-gray-300 text-black rounded-md">Cancel</a>
+=======
         <div class="flex gap-6">
             <button type="submit" class="px-6 py-3 bg-purple-500 text-white rounded-md shadow-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500">Create Task</button>
             <a href="{{ route('tasks.index') }}" class="px-6 py-3 bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">Cancel</a>
+>>>>>>> upstream/main
         </div>
 
     </form>
