@@ -1,12 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-2xl mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">Create New Task</h1>
-    <form action="" method="POST">
+<div class="max-w-2xl mx-auto p-6 bg-white text-gray-900 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold mb-6 text-purple-600">Create New Task</h1>
+
+    {{-- Progress Indicator --}}
+    <div class="mb-6">
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div id="progress-bar" class="bg-purple-500 h-2.5 rounded-full" style="width: 0%"></div>
+        </div>
+        <p id="progress-text" class="text-sm text-purple-600 mt-2">Progress: 0% completed</p>
+    </div>
+
+    <form action="" method="POST" id="task-form">
         @csrf
 
         {{-- Task Name --}}
+<<<<<<< HEAD
         <div class="mb-4">
             <label for="task_name" class="block text-sm font-medium text-gray-700">Task Name</label>
             <input type="text" name="task_name" id="task_name" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm" placeholder="e.g., Take out trash" required>
@@ -22,6 +32,30 @@
         <div class="mb-4">
             <label for="time_complexity" class="block text-sm font-medium text-gray-700">Time Estimate</label>
             <select name="time_complexity" id="time_complexity" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm">
+=======
+        <div class="mb-6">
+            <label for="task_name" class="block text-sm font-medium text-purple-600">Task Name</label>
+            <input type="text" name="task_name" id="task_name" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., Take out trash"
+            oninvalid="this.setCustomValidity('Please enter a valid task name')"
+oninput="this.setCustomValidity('')"
+pattern="^[a-zA-Z0-9\s\-_]{3,255}$"
+required >
+
+        </div>
+
+        {{-- Task Location --}}
+        <div class="mb-6">
+            <label for="task_location" class="block text-sm font-medium text-purple-600">Location</label>
+            <input type="text" name="task_location" id="task_location" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="Kitchen, Garage"
+            pattern="^[a-zA-Z0-9\s\-_,]{0,255}$"
+title="Location can contain letters, numbers, spaces, hyphens, underscores and commas">
+        </div>
+
+        {{-- Time Estimate --}}
+        <div class="mb-6">
+            <label for="time_complexity" class="block text-sm font-medium text-purple-600">Time Estimate</label>
+            <select name="time_complexity" id="time_complexity" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+>>>>>>> upstream/main
                 <option value="10">10 min</option>
                 <option value="30">30 min</option>
                 <option value="60">1 hour</option>
@@ -30,6 +64,7 @@
             </select>
         </div>
 
+<<<<<<< HEAD
         {{-- Materials Required (Optional) --}}
         <div class="mb-4">
             <label for="materials_required" class="block text-sm font-medium text-gray-700">Materials Required</label>
@@ -46,24 +81,81 @@
         <div class="mb-4">
             <label for="priority" class="block text-sm font-medium text-gray-700">Priority</label>
             <select name="priority" id="priority" class="mt-1 block w-full border-gray-300 rounded-sm shadow-sm">
+=======
+        {{-- Materials Required --}}
+        <div class="mb-6">
+            <label for="materials_required" class="block text-sm font-medium text-purple-600">Materials Required</label>
+            <input type="text" name="materials_required" id="materials_required" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., Trash Bags, Broom">
+        </div>
+
+        {{-- Deadline --}}
+        <div class="mb-6">
+            <label for="deadline" class="block text-sm font-medium text-purple-600">Deadline</label>
+            <input type="datetime-local" name="deadline" id="deadline" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+        </div>
+
+        {{-- Priority --}}
+        <div class="mb-6">
+            <label for="priority" class="block text-sm font-medium text-purple-600">Priority</label>
+            <select name="priority" id="priority" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500">
+>>>>>>> upstream/main
                 <option value="1">Low (1)</option>
                 <option value="2">Medium (2)</option>
                 <option value="3">High (3)</option>
             </select>
         </div>
 
-        {{-- Category (Optional) --}}
-        <div class="mb-4">
-            <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-            <input type="text" name="category" id="category" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="e.g., chores, work, health" optional>
+        {{-- Category --}}
+        <div class="mb-6">
+            <label for="category" class="block text-sm font-medium text-purple-600">Category</label>
+            <input type="text" name="category" id="category" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., chores, work, health"
+            pattern="^[a-zA-Z\s]{0,50}$"
+title="Category must contain only letters and spaces">
+
         </div>
 
         {{-- Submit and Cancel Buttons --}}
+<<<<<<< HEAD
         <div class="flex gap-4">
             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-sm">Create Task</button>
             <a href="{{ route('tasks.index') }}" class="px-4 py-2 bg-gray-300 text-black rounded-md">Cancel</a>
+=======
+        <div class="flex gap-6">
+            <button type="submit" class="px-6 py-3 bg-purple-500 text-white rounded-md shadow-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500">Create Task</button>
+            <a href="{{ route('tasks.index') }}" class="px-6 py-3 bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500">Cancel</a>
+>>>>>>> upstream/main
         </div>
 
     </form>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const formFields = [
+            document.getElementById('task_name'),
+            document.getElementById('task_location'),
+            document.getElementById('time_complexity'),
+            document.getElementById('materials_required'),
+            document.getElementById('deadline'),
+            document.getElementById('priority'),
+            document.getElementById('category')
+        ];
+
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        formFields.forEach(field => {
+            field.addEventListener('input', updateProgress);
+        });
+
+        function updateProgress() {
+            let filledFields = formFields.filter(field => field.value.trim() !== '').length;
+            let totalFields = formFields.length;
+            let progress = (filledFields / totalFields) * 100;
+
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `Progress: ${Math.round(progress)}% completed`;
+        }
+    });
+</script>
 @endsection

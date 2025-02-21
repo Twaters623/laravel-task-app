@@ -17,7 +17,7 @@
     <div class="bg-blue-500 shadow-md hover:bg-sky-700 p-4 border border-black">
         <strong>Location:</strong> {{ $task->task_location }}
     </div>
-    <div class="bg-blue-500 shadow-md hover:bg-sky-700 p-4 border border-black">
+    <div class="bg-blue-500 shad-md hover:bg-sky-700 p-4 border border-black">
         <strong>Time Complexity:</strong> {{ $task->time_complexity }}
     </div>
     <div class="bg-blue-500 shadow-md hover:bg-sky-700 p-4 border border-black">
