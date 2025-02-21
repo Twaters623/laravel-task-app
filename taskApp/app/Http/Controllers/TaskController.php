@@ -48,15 +48,7 @@ return view('tasks.create');
 */
 public function store(Request $request)
 {
-$validated = $request->validate([
-'task_name' => 'required|string|max:255',
-'task_location' => 'nullable|string|max:255',
-'time_complexity' => 'required|integer|min:1|max:5',
-'materials_required' => 'nullable|string',
-'deadline' => 'nullable|date',
-'priority' => 'nullable|integer|min:1|max:3',
-'category' => 'nullable|string|max:255',
-]);
+$validated = $request->validate(Task::validationRules());
 Task::create($validated);
 return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
 }
@@ -72,7 +64,7 @@ return view('tasks.show', compact('task'));
 */
 public function edit(string $id)
 {
-$task = Task::findOrFail($id);
+// $task = Task::findOrFail($id);
 return view('tasks.edit', compact('task'));
 }
 /**
@@ -80,16 +72,8 @@ return view('tasks.edit', compact('task'));
 */
 public function update(Request $request, string $id)
 {
-$validated = $request->validate([
-'task_name' => 'required|string|max:255',
-'task_location' => 'nullable|string|max:255',
-'time_complexity' => 'required|integer|min:1|max:255',
-'materials_required' => 'nullable|string',
-'deadline' => 'nullable|date',
-'priority' => 'nullable|integer|min:1|max:3',
-'category' => 'nullable|string|max:255',
-]);
-$task = Task::findOrFail($id);
+$validated = $request->validate(Task::validationRules());
+// $task = Task::findOrFail($id);
 $task->update($validated);
 return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
 }

@@ -38,7 +38,7 @@ value="{{ old('materials_required', $task->materials_required) }}">
 </div>
 <div>
 <label for="deadline">Deadline:</label>
-<input type="date" name="deadline" id="deadline"
+<input type="datetime-local" name="deadline" id="deadline"
 value="{{ old('deadline', $task->deadline) }}">
 @error('deadline')
 <div style="color: red;">{{ $message }}</div>
