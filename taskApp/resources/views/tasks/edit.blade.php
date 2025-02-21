@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h1>Edit Task</h1>
-<form action="{{ route('tasks.update', $task->id) }}" method="POST">
+<form class="" action="{{ route('tasks.update', $task->id) }}" method="POST">
 @csrf
 @method('PUT') {{-- Important for updating (PUT/PATCH) --}}
 <div>

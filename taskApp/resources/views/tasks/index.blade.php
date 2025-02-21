@@ -23,26 +23,28 @@ Deadline
 Category
 </option>
 </select>
-<button type="submit" class="bg-blue-500 text-white px-4 py-2 ml-2 rounded hover:bg-blue-600">
+<button type="submit" class="bg-purple-500 text-white px-4 py-2 ml-2 rounded hover:bg-blue-600">
 Search & Sort
 </button>
 </form>
 <ul>
 @forelse($tasks as $task)
-<li class="mb-2">
-{{ $task->task_name }}
-<!-- Link to the show page -->
-<a href="{{ route('tasks.show', $task->id) }}" class="text-blue-500 underline ml-2">
-View
-</a>
-</li>
+<div class="bg-purple-500 shadow-md">
+    <li class="mb-2 p-4 text-white">
+        {{ $task->task_name }}
+        <!-- Link to the show page -->
+        <a href="{{ route('tasks.show', $task->id) }}" class="ml-2 float-right px-3 rounded-lg {{ $task->priority === 3 ? 'bg-red-500' : ($task->priority === 2 ? 'bg-yellow-400' : 'bg-green-500') }}">
+            View
+        </a>
+    </li>
+</div>
 @empty
 <li>No tasks yet.</li>
 @endforelse
 </ul>
 <div class="mt-4">
 <a href="{{ route('tasks.create') }}"
-class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
 Create a New Task
 </a>
 </div>
