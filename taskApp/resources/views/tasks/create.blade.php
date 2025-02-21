@@ -18,13 +18,20 @@
         {{-- Task Name --}}
         <div class="mb-6">
             <label for="task_name" class="block text-sm font-medium text-purple-600">Task Name</label>
-            <input type="text" name="task_name" id="task_name" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., Take out trash" required>
+            <input type="text" name="task_name" id="task_name" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., Take out trash"
+            oninvalid="this.setCustomValidity('Please enter a valid task name')"
+oninput="this.setCustomValidity('')"
+pattern="^[a-zA-Z0-9\s\-_]{3,255}$"
+required >
+
         </div>
 
         {{-- Task Location --}}
         <div class="mb-6">
             <label for="task_location" class="block text-sm font-medium text-purple-600">Location</label>
-            <input type="text" name="task_location" id="task_location" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="Kitchen, Garage">
+            <input type="text" name="task_location" id="task_location" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="Kitchen, Garage"
+            pattern="^[a-zA-Z0-9\s\-_,]{0,255}$"
+title="Location can contain letters, numbers, spaces, hyphens, underscores and commas">
         </div>
 
         {{-- Time Estimate --}}
@@ -64,7 +71,10 @@
         {{-- Category --}}
         <div class="mb-6">
             <label for="category" class="block text-sm font-medium text-purple-600">Category</label>
-            <input type="text" name="category" id="category" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., chores, work, health">
+            <input type="text" name="category" id="category" class="mt-1 block w-full bg-gray-100 border border-gray-300 text-gray-900 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 placeholder-gray-500" placeholder="e.g., chores, work, health"
+            pattern="^[a-zA-Z\s]{0,50}$"
+title="Category must contain only letters and spaces">
+
         </div>
 
         {{-- Submit and Cancel Buttons --}}
