@@ -15,7 +15,7 @@ $table->tinyInteger('time_complexity');
 // You could also store multiple materials by making this a TEXT field
 $table->string('materials_required')->nullable();
 // Or use $table->date('deadline') if you only want date
-$table->dateTime('deadline')->nullable();
+$table->date('deadline')->nullable();
 // 1 = low, 2 = medium, 3 = high
 $table->tinyInteger('priority')->nullable();
 // E.g. chores, work, health, ...
