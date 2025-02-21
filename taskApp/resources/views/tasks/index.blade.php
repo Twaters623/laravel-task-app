@@ -33,7 +33,7 @@ Search & Sort
     <li class="mb-2 p-4 text-white">
         {{ $task->task_name }}
         <!-- Link to the show page -->
-        <a href="{{ route('tasks.show', $task->id) }}" class="ml-2 float-right bg-yellow-400 px-3 rounded-lg {{ $task->pr}}">
+        <a href="{{ route('tasks.show', $task->id) }}" class="ml-2 float-right px-3 rounded-lg {{ $task->priority === 3 ? 'bg-red-500' : ($task->priority === 2 ? 'bg-yellow-400' : 'bg-green-500') }}">
             View
         </a>
     </li>
