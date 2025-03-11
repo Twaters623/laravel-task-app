@@ -48,6 +48,7 @@ return view('tasks.create');
 */
 public function store(Request $request)
 {
+   
    $validated = $request->validate(Task::validationRules());
 
 Task::create($validated);
