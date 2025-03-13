@@ -1,9 +1,9 @@
 <?php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Validation\Rule;
 class Task extends Model
 {
+    // Which attributes can be mass assigned
     protected $fillable = [
         'task_name',
         'task_location',
@@ -13,7 +13,6 @@ class Task extends Model
         'priority',
         'category',
     ];
-
     public static function validationRules()
     {
         return [
